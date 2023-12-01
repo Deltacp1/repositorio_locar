@@ -107,8 +107,17 @@ public class Placa extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
-            Crud databaseController = new Crud(this);
-            databaseController.buscarPlaca();
+            Crud databaseController = new Crud();
+            boolean existeNoBanco = databaseController.buscarPlaca(this);
+            
+            if(!existeNoBanco){
+                Cadveiculos cadastroScreen = new Cadveiculos(getjTextField2Placa().getText());
+                
+                cadastroScreen.show();
+                
+                dispose();
+            }
+            
         } catch (SQLException ex) {
             Logger.getLogger(Placa.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -140,37 +149,6 @@ public class Placa extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Placa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -187,7 +165,6 @@ public class Placa extends javax.swing.JFrame {
     public void setjTextField2Placa(JTextField jTextField2Placa) {
         this.jTextField2Placa = jTextField2Placa;
     }
-    
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

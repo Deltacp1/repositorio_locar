@@ -1,5 +1,6 @@
 package br.com.gking.database_controller;
 
+import br.com.delta.telalogin.Cadveiculos;
 import br.com.delta.telalogin.Placa;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -13,13 +14,11 @@ import javax.swing.JOptionPane;
  */
 
 public class Crud {
-    private static Placa placaView;
     private static Connection connection = null;
     private static String databaseUser = "postgres";
     private static String databasePassword = "18216816";
     
-    public Crud(Placa placaView){
-        this.placaView = placaView;
+    public Crud(){
     }
     
     public static void databaseConnection() throws SQLException{
@@ -39,7 +38,7 @@ public class Crud {
         }
     }
     
-    public static void buscarPlaca() throws SQLException{
+    public static boolean buscarPlaca(Placa placaView) throws SQLException{
         String placa = placaView.getjTextField2Placa().getText();
         
         databaseConnection();
@@ -49,15 +48,22 @@ public class Crud {
         ResultSet resultPlaca = connection.createStatement().executeQuery(sqlQuery);
         
         if(resultPlaca.next()){
+            closeConnection();
+            JOptionPane.showMessageDialog(placaView, "Veículo já cadastrado!");/*
             JOptionPane.showMessageDialog(placaView,
-                    "Placa: " + resultPlaca.getString("placa") +
-                    "\nMarca: " + resultPlaca.getString("marca") +
-                    "\nModelo: " + resultPlaca.getString("modelo") +
-                    "\nAno: " + resultPlaca.getString("ano") +
-                    "\nCor: " + resultPlaca.getString("cor"));
-        } else {
-            JOptionPane.showMessageDialog(placaView, "Placa não consta no banco de dados!");
+                "Placa: " + resultPlaca.getString("placa") +
+                "\nMarca: " + resultPlaca.getString("marca") +
+                "\nModelo: " + resultPlaca.getString("modelo") +
+                "\nAno: " + resultPlaca.getString("ano") +
+                "\nCor: " + resultPlaca.getString("cor"));*/
+            return true;
         }
-        closeConnection();
+        return false;
+    }
+    
+    public static void cadastrarVeiculoNoBanco(String placa, String marca, String modelo, int ano, String cor, int quilometragem, String categoria, boolean disponibilidade ) throws SQLException{
+        databaseConnection();
+        String sqlQuery = "insert into carro (placa, marca, modelo, ano, cor, quilometragem, categoria, disponibilidade) values ('"+placa+"', '"+marca+"', '"+modelo+"', '"+ano+"', '"+cor+"', '"+quilometragem+"', '"+categoria+"', '"+disponibilidade+"')";
+        connection.createStatement().executeQuery(sqlQuery);
     }
 }
