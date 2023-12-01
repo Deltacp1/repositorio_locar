@@ -30,11 +30,13 @@ public class Crud {
            System.out.println("Driver não localizado: " + e.getMessage());
        } catch(SQLException ex) {
            System.out.println("Erro ao acessar o banco: " + ex.getMessage());
-       } finally {
-           if(connection != null){
-               connection.close();
-           }
        }
+    }
+    
+    public static void  closeConnection() throws SQLException{
+        if(connection != null){
+            connection.close();
+        }
     }
     
     public static void buscarPlaca() throws SQLException{
@@ -47,9 +49,15 @@ public class Crud {
         ResultSet resultPlaca = connection.createStatement().executeQuery(sqlQuery);
         
         if(resultPlaca.next()){
-            System.out.println("Placa: " + resultPlaca.getString("placa"));
+            JOptionPane.showMessageDialog(placaView,
+                    "Placa: " + resultPlaca.getString("placa") +
+                    "\nMarca: " + resultPlaca.getString("marca") +
+                    "\nModelo: " + resultPlaca.getString("modelo") +
+                    "\nAno: " + resultPlaca.getString("ano") +
+                    "\nCor: " + resultPlaca.getString("cor"));
         } else {
             JOptionPane.showMessageDialog(placaView, "Placa não consta no banco de dados!");
         }
+        closeConnection();
     }
 }

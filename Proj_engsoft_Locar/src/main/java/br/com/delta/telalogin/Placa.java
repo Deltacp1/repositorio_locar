@@ -107,7 +107,8 @@ public class Placa extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
-            Crud.buscarPlaca();
+            Crud databaseController = new Crud(this);
+            databaseController.buscarPlaca();
         } catch (SQLException ex) {
             Logger.getLogger(Placa.class.getName()).log(Level.SEVERE, null, ex);
         }
