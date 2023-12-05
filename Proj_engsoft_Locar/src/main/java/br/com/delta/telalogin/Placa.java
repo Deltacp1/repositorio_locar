@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package br.com.delta.telalogin;
-import br.com.gking.database_controller.Crud;
+import br.com.gking.controller.Crud;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;

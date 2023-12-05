@@ -4,7 +4,7 @@
  */
 package br.com.delta.telalogin;
 
-import br.com.gking.database_controller.Crud;
+import br.com.gking.controller.Crud;
 import java.awt.Color;
 import java.sql.SQLException;
 import java.util.logging.Level;
