@@ -48,12 +48,12 @@ public class database {
         return statement.executeQuery(query);
     }*/
     
-    public static Cliente consultarCliente(String nome) throws SQLException{
+    public static Cliente consultarCliente(long cpf) throws SQLException{
         Cliente cliente = null;
         
         databaseConnection();
 
-        String sqlQuery = "select * from cliente where nome = '"+nome+"'";
+        String sqlQuery = "select * from cliente where cpf = '"+cpf+"'";
 
         var databaseClientReturn = connection.createStatement().executeQuery(sqlQuery);
         

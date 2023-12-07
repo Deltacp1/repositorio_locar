@@ -9,10 +9,10 @@ package br.com.gking.model;
  * @author Gking
  */
 public class Cliente {
-    private long cpf;
-    private String nome;
-    private long telefone;
-    private String email;
+    private static long cpf;
+    private static String nome;
+    private static long telefone;
+    private static String email;
     
     public Cliente(long cpf, String nome, long telefone, String email){
         this.cpf = cpf;

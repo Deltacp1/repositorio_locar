@@ -36,10 +36,20 @@ public class tela_inicial extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(255, 125, 5));
 
-        clientesButton.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        clientesButton.setBackground(new java.awt.Color(255, 238, 223));
+        clientesButton.setFont(new java.awt.Font("Arial", 0, 25)); // NOI18N
+        clientesButton.setForeground(new java.awt.Color(182, 57, 57));
         clientesButton.setText("Clientes");
+        clientesButton.setAlignmentY(0.0F);
+        clientesButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, new java.awt.Color(0, 0, 0), java.awt.Color.white));
+        clientesButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        clientesButton.setMargin(new java.awt.Insets(12, 90, 11, 90));
+        clientesButton.setMaximumSize(new java.awt.Dimension(282, 56));
+        clientesButton.setMinimumSize(new java.awt.Dimension(282, 56));
+        clientesButton.setName(""); // NOI18N
+        clientesButton.setPreferredSize(new java.awt.Dimension(282, 56));
         clientesButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 clientesButtonActionPerformed(evt);
@@ -83,7 +93,7 @@ public class tela_inicial extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(48, 48, 48)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(veiculosButton, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
+                    .addComponent(veiculosButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(clientesButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(reservaButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
@@ -91,7 +101,7 @@ public class tela_inicial extends javax.swing.JFrame {
                     .addComponent(devolucaoButton, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
                     .addComponent(locacaoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(relatorioButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(48, 48, 48))
+                .addGap(33, 33, 33))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -99,7 +109,7 @@ public class tela_inicial extends javax.swing.JFrame {
                 .addGap(78, 78, 78)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(clientesButton)
+                        .addComponent(clientesButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(veiculosButton)
                         .addGap(6, 6, 6)
@@ -110,7 +120,7 @@ public class tela_inicial extends javax.swing.JFrame {
                         .addComponent(devolucaoButton)
                         .addGap(6, 6, 6)
                         .addComponent(relatorioButton)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -136,9 +146,9 @@ public class tela_inicial extends javax.swing.JFrame {
     }//GEN-LAST:event_relatorioButtonActionPerformed
 
     private void clientesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientesButtonActionPerformed
-        var clientesScreen = new tela_clientes();
+        var buscarClientesScreen = new buscar_clientes();
         
-        clientesScreen.show();
+        buscarClientesScreen.show();
         dispose();
     }//GEN-LAST:event_clientesButtonActionPerformed
 

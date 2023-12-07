@@ -118,7 +118,7 @@ public class tela_clientes extends javax.swing.JFrame {
 
     private void atualizarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarButtonActionPerformed
         try {
-            var cliente = new Cliente(12547862359L, "Oliveira", 74998745632L, "pf.oliveira@edu.br");
+            var cliente = new Cliente(12547862359L, "Oliveira", 87956823147L, "pf.oliveira@edu.br");
             var atualizacaoSucesso = database.atualizarCliente(12547862359L, cliente);
             
             if(!atualizacaoSucesso){
@@ -149,9 +149,9 @@ public class tela_clientes extends javax.swing.JFrame {
 
     private void consultarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarButtonActionPerformed
         try {
-            String nome = "Daryl";
+            Long cpf = 80094410200L;
             
-            Cliente cliente = database.consultarCliente(nome);
+            Cliente cliente = database.consultarCliente(cpf);
             
             if(cliente != null){
                 JOptionPane.showMessageDialog(rootPane, "Cpf: " + cliente.getCpf() +
