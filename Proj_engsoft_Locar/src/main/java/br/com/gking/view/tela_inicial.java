@@ -120,7 +120,7 @@ public class tela_inicial extends javax.swing.JFrame {
                         .addComponent(devolucaoButton)
                         .addGap(6, 6, 6)
                         .addComponent(relatorioButton)))
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addContainerGap(96, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -153,9 +153,9 @@ public class tela_inicial extends javax.swing.JFrame {
     }//GEN-LAST:event_clientesButtonActionPerformed
 
     private void veiculosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_veiculosButtonActionPerformed
-        var veiculosScreen = new tela_veiculos();
+        var buscarVeiculosScreen = new buscar_placa();
         
-        veiculosScreen.show();
+        buscarVeiculosScreen.show();
         dispose();
     }//GEN-LAST:event_veiculosButtonActionPerformed
 

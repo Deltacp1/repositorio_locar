@@ -5,6 +5,7 @@
 package br.com.gking.controller;
 
 import br.com.gking.model.Cliente;
+import br.com.gking.model.Veiculo;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -39,14 +40,6 @@ public class database {
             connection.close();
         }
     }
-    
-    /*public static Statement createStatement() throws SQLException{
-        return connection.createStatement();
-    }
-    
-    public static ResultSet executeQuery(Statement statement, String query) throws SQLException{
-        return statement.executeQuery(query);
-    }*/
     
     public static Cliente consultarCliente(long cpf) throws SQLException{
         Cliente cliente = null;
@@ -90,6 +83,60 @@ public class database {
             databaseConnection();
             
             String sqlQuery = "delete from cliente where cpf = '"+cpf+"'";
+            
+            return connection.createStatement().execute(sqlQuery);
+        } catch (SQLException ex) {
+            Logger.getLogger(database.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
+    }
+    
+    public static boolean cadastrarVeiculo(Veiculo veiculo) throws SQLException{
+        databaseConnection();
+        
+        String sqlQuery = ("insert into veiculo (placa, marca, modelo, ano, cor, quilometragem, categoria, disponibilidade) values ('"+veiculo.getPlaca()+"', '"+veiculo.getMarca()+"', '"+veiculo.getModelo()+"', '"+veiculo.getAno()+"', '"+veiculo.getCor()+"', '"+veiculo.getQuilometragem()+"', '"+veiculo.getCategoria()+"', '"+veiculo.isDisponibilidade()+"')");
+        
+        return connection.createStatement().execute(sqlQuery);
+    }
+    
+    public static Veiculo consultarVeiculo(String placa) throws SQLException{
+        Veiculo veiculo = null;
+        
+        databaseConnection();
+
+        String sqlQuery = "select * from veiculo where placa = '"+placa+"'";
+
+        var databaseVeiculoReturn = connection.createStatement().executeQuery(sqlQuery);
+        
+        if(databaseVeiculoReturn.next()){
+            veiculo = new Veiculo(databaseVeiculoReturn.getString("placa"),
+                                  databaseVeiculoReturn.getString("marca"),
+                                  databaseVeiculoReturn.getString("modelo"),
+                                  Integer.parseInt(databaseVeiculoReturn.getString("ano")),
+                                  databaseVeiculoReturn.getString("cor"),
+                                  Integer.parseInt(databaseVeiculoReturn.getString("quilometragem")),
+                                  databaseVeiculoReturn.getString("categoria"),
+                                  Boolean.parseBoolean(databaseVeiculoReturn.getString("disponibilidade"))
+                                 );
+        }
+        
+        closeConnection();
+        return veiculo;
+    }
+    
+    public static boolean atualizarVeiculo(String placa, Veiculo veiculo) throws SQLException{
+        databaseConnection();
+        
+        String sqlQuery = "update veiculo set placa = '"+veiculo.getPlaca()+"', marca = '"+veiculo.getMarca()+"', modelo = '"+veiculo.getModelo()+"', cor = '"+veiculo.getCor()+"', ano = '"+veiculo.getAno()+"',quilometragem = '"+veiculo.getQuilometragem()+"', categoria = '"+veiculo.getCategoria()+"', disponibilidade = '"+veiculo.isDisponibilidade()+"' where placa = '"+placa+"'";
+        
+        return connection.createStatement().execute(sqlQuery);
+    }
+    
+    public static boolean deletarVeiculo(String placa){
+        try {
+            databaseConnection();
+            
+            String sqlQuery = "delete from veiculo where placa = '"+placa+"'";
             
             return connection.createStatement().execute(sqlQuery);
         } catch (SQLException ex) {

@@ -308,7 +308,7 @@ public class gerenciar_clientes extends javax.swing.JFrame {
         telefoneText.setEnabled(false);
         emailText.setEnabled(false);
 
-        excluirBotao.setVisible(true);
+        excluirBotao.setVisible(false);
         editarBotao.setVisible(true);
         salvarBotao.setVisible(false);
         cadastrarBotao.setVisible(false);
@@ -334,7 +334,7 @@ public class gerenciar_clientes extends javax.swing.JFrame {
         telefoneText.setEnabled(true);
         emailText.setEnabled(true);
         
-        excluirBotao.setVisible(false);
+        excluirBotao.setVisible(true);
         editarBotao.setVisible(false);
         salvarBotao.setVisible(true);
         cadastrarBotao.setVisible(false);

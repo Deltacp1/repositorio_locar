@@ -8,7 +8,7 @@ package br.com.gking.model;
  *
  * @author Gking
  */
-public class Carro {
+public class Veiculo {
     private String placa;
     private String marca;
     private String modelo;
@@ -18,7 +18,7 @@ public class Carro {
     private String categoria;
     private boolean disponibilidade;
     
-    public Carro(String placa, String marca, String modelo, int ano, String cor, int quilometragem, String categoria, boolean disponibilidade) {
+    public Veiculo(String placa, String marca, String modelo, int ano, String cor, int quilometragem, String categoria, boolean disponibilidade) {
         this.placa = placa;
         this.marca = marca;
         this.modelo = modelo;
@@ -92,4 +92,5 @@ public class Carro {
     public void setDisponibilidade(boolean disponibilidade) {
         this.disponibilidade = disponibilidade;
     }
+    
 }
