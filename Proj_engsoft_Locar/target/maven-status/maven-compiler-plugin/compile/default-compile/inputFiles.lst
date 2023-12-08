@@ -1,22 +1,13 @@
-<<<<<<< HEAD
-D:\EAD\Engenharia de Software II\repositorio_locar\Proj_engsoft_Locar\src\main\java\br\com\gking\controller\database.java
-D:\EAD\Engenharia de Software II\repositorio_locar\Proj_engsoft_Locar\src\main\java\br\com\gking\view\gerenciar_veiculos.java
+D:\EAD\Engenharia de Software II\repositorio_locar\Proj_engsoft_Locar\src\main\java\br\com\gking\controller\reservaController.java
 D:\EAD\Engenharia de Software II\repositorio_locar\Proj_engsoft_Locar\src\main\java\br\com\gking\model\Reserva.java
 D:\EAD\Engenharia de Software II\repositorio_locar\Proj_engsoft_Locar\src\main\java\br\com\gking\view\gerenciar_clientes.java
-D:\EAD\Engenharia de Software II\repositorio_locar\Proj_engsoft_Locar\src\main\java\br\com\gking\view\gerenciar_reserva.java
 D:\EAD\Engenharia de Software II\repositorio_locar\Proj_engsoft_Locar\src\main\java\br\com\gking\view\buscar_placa.java
 D:\EAD\Engenharia de Software II\repositorio_locar\Proj_engsoft_Locar\src\main\java\br\com\gking\model\Veiculo.java
 D:\EAD\Engenharia de Software II\repositorio_locar\Proj_engsoft_Locar\src\main\java\br\com\gking\model\Cliente.java
+D:\EAD\Engenharia de Software II\repositorio_locar\Proj_engsoft_Locar\src\main\java\br\com\gking\controller\database.java
+D:\EAD\Engenharia de Software II\repositorio_locar\Proj_engsoft_Locar\src\main\java\br\com\gking\view\gerenciar_veiculos.java
+D:\EAD\Engenharia de Software II\repositorio_locar\Proj_engsoft_Locar\src\main\java\br\com\gking\controller\clienteController.java
+D:\EAD\Engenharia de Software II\repositorio_locar\Proj_engsoft_Locar\src\main\java\br\com\gking\view\gerenciar_reserva.java
+D:\EAD\Engenharia de Software II\repositorio_locar\Proj_engsoft_Locar\src\main\java\br\com\gking\controller\veiculoController.java
 D:\EAD\Engenharia de Software II\repositorio_locar\Proj_engsoft_Locar\src\main\java\br\com\gking\view\buscar_clientes.java
 D:\EAD\Engenharia de Software II\repositorio_locar\Proj_engsoft_Locar\src\main\java\br\com\gking\view\tela_inicial.java
-=======
-C:\Users\Delta\Documents\NetBeansProjects\repositorio_locar\Proj_engsoft_Locar\src\main\java\br\com\gking\view\gerenciar_clientes.java
-C:\Users\Delta\Documents\NetBeansProjects\repositorio_locar\Proj_engsoft_Locar\src\main\java\br\com\gking\model\Reserva.java
-C:\Users\Delta\Documents\NetBeansProjects\repositorio_locar\Proj_engsoft_Locar\src\main\java\br\com\gking\model\Veiculo.java
-C:\Users\Delta\Documents\NetBeansProjects\repositorio_locar\Proj_engsoft_Locar\src\main\java\br\com\gking\view\gerenciar_veiculos.java
-C:\Users\Delta\Documents\NetBeansProjects\repositorio_locar\Proj_engsoft_Locar\src\main\java\br\com\gking\controller\database.java
-C:\Users\Delta\Documents\NetBeansProjects\repositorio_locar\Proj_engsoft_Locar\src\main\java\br\com\gking\view\buscar_clientes.java
-C:\Users\Delta\Documents\NetBeansProjects\repositorio_locar\Proj_engsoft_Locar\src\main\java\br\com\gking\view\tela_inicial.java
-C:\Users\Delta\Documents\NetBeansProjects\repositorio_locar\Proj_engsoft_Locar\src\main\java\br\com\gking\model\Cliente.java
-C:\Users\Delta\Documents\NetBeansProjects\repositorio_locar\Proj_engsoft_Locar\src\main\java\br\com\gking\view\buscar_placa.java
->>>>>>> 784c6b56aca7cbc19a1b5af68fca1ca5b769624f

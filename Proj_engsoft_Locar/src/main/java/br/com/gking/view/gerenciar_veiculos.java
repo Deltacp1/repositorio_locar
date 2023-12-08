@@ -492,13 +492,6 @@ public class gerenciar_veiculos extends javax.swing.JFrame {
         dispose();
     }// GEN-LAST:event_voltarBotaoActionPerformed
 
-    private void voltarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarBotaoActionPerformed
-        var telaInicialScreen = new tela_inicial();
-
-        telaInicialScreen.show();
-        dispose();
-    }//GEN-LAST:event_voltarBotaoActionPerformed
-
     /**
      * @param args the command line arguments
      */
