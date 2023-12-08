@@ -5,9 +5,12 @@
 package br.com.gking.controller;
 
 import br.com.gking.model.Cliente;
+import br.com.gking.model.Reserva;
 import br.com.gking.model.Veiculo;
+import br.com.gking.view.buscar_clientes;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -94,7 +97,7 @@ public class database {
     public static boolean cadastrarVeiculo(Veiculo veiculo) throws SQLException{
         databaseConnection();
         
-        String sqlQuery = ("insert into veiculo (placa, marca, modelo, ano, cor, quilometragem, categoria, disponibilidade) values ('"+veiculo.getPlaca()+"', '"+veiculo.getMarca()+"', '"+veiculo.getModelo()+"', '"+veiculo.getAno()+"', '"+veiculo.getCor()+"', '"+veiculo.getQuilometragem()+"', '"+veiculo.getCategoria()+"', '"+veiculo.isDisponibilidade()+"')");
+        String sqlQuery = ("insert into veículo (placa, marca, modelo, ano, cor, quilometragem, categoria, disponibilidade) values ('"+veiculo.getPlaca()+"', '"+veiculo.getMarca()+"', '"+veiculo.getModelo()+"', '"+veiculo.getAno()+"', '"+veiculo.getCor()+"', '"+veiculo.getQuilometragem()+"', '"+veiculo.getCategoria()+"', '"+veiculo.isDisponibilidade()+"')");
         
         return connection.createStatement().execute(sqlQuery);
     }
@@ -104,7 +107,7 @@ public class database {
         
         databaseConnection();
 
-        String sqlQuery = "select * from veiculo where placa = '"+placa+"'";
+        String sqlQuery = "select * from veículo where placa = '"+placa+"'";
 
         var databaseVeiculoReturn = connection.createStatement().executeQuery(sqlQuery);
         
@@ -127,7 +130,7 @@ public class database {
     public static boolean atualizarVeiculo(String placa, Veiculo veiculo) throws SQLException{
         databaseConnection();
         
-        String sqlQuery = "update veiculo set placa = '"+veiculo.getPlaca()+"', marca = '"+veiculo.getMarca()+"', modelo = '"+veiculo.getModelo()+"', cor = '"+veiculo.getCor()+"', ano = '"+veiculo.getAno()+"',quilometragem = '"+veiculo.getQuilometragem()+"', categoria = '"+veiculo.getCategoria()+"', disponibilidade = '"+veiculo.isDisponibilidade()+"' where placa = '"+placa+"'";
+        String sqlQuery = "update veículo set placa = '"+veiculo.getPlaca()+"', marca = '"+veiculo.getMarca()+"', modelo = '"+veiculo.getModelo()+"', cor = '"+veiculo.getCor()+"', ano = '"+veiculo.getAno()+"',quilometragem = '"+veiculo.getQuilometragem()+"', categoria = '"+veiculo.getCategoria()+"', disponibilidade = '"+veiculo.isDisponibilidade()+"' where placa = '"+placa+"'";
         
         return connection.createStatement().execute(sqlQuery);
     }
@@ -136,12 +139,60 @@ public class database {
         try {
             databaseConnection();
             
-            String sqlQuery = "delete from veiculo where placa = '"+placa+"'";
+            String sqlQuery = "delete from veículo where placa = '"+placa+"'";
             
             return connection.createStatement().execute(sqlQuery);
         } catch (SQLException ex) {
             Logger.getLogger(database.class.getName()).log(Level.SEVERE, null, ex);
         }
         return false;
+    }
+    
+    public static int cadastrarReserva(Reserva reserva) throws SQLException{
+        var cliente = consultarCliente(reserva.getCpf());
+        if(cliente != null){
+            var veiculo = consultarVeiculo(reserva.getPlaca());
+            if(veiculo != null){
+                var verificarDatas = true;
+                if(verificarDatas){
+                    databaseConnection();
+                    String sqlQuery = "insert into reserva (data_retirada, data_retorno, fk_cpf, fk_placa) values ('"+reserva.getDataRetirada()+"', '"+reserva.getDataRetorno()+"', '"+reserva.getCpf()+"', '"+reserva.getPlaca()+"')";
+                    var result = connection.createStatement().execute(sqlQuery);
+                    return 3;
+                }
+            } else {
+                return 2;
+            }
+        } else {
+            return 1;
+        }
+        return 0;
+    }
+    
+    public static boolean excluirReserva(Reserva reserva){
+        try {
+            databaseConnection();
+            
+            String sqlQuery = "delete from reserva where fk_placa = '"+reserva.getPlaca()+"' and fk_cpf = '"+reserva.getCpf()+"' and data_retirada = '"+reserva.getDataRetirada()+"' and data_retorno = '"+reserva.getDataRetorno()+"'";
+            
+            return connection.createStatement().execute(sqlQuery);
+        } catch (SQLException ex) {
+            Logger.getLogger(database.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
+    }
+    
+    public static Reserva consultarReserva(Reserva reserva) throws SQLException{
+        databaseConnection();
+
+        String sqlQuery = "select * from reserva where fk_placa = '"+reserva.getPlaca()+"' and fk_cpf = '"+reserva.getCpf()+"' and data_retirada = '"+reserva.getDataRetirada()+"' and data_retorno = '"+reserva.getDataRetorno()+"'";
+
+        var databaseVeiculoReturn = connection.createStatement().executeQuery(sqlQuery);
+        
+        if(databaseVeiculoReturn.next()){
+            return reserva;
+        }
+        closeConnection();
+        return null;
     }
 }

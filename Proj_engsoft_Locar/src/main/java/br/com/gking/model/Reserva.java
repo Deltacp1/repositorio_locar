@@ -11,18 +11,24 @@ import java.sql.Date;
  * @author Gking
  */
 public class Reserva {
-    private Date data_locacao;
+    private Date dataRetirada;
+    private Date dataRetorno;
     private long cpf;
     private String placa;
 
-    public Reserva(Date data_locacao, long cpf, String placa) {
-        this.data_locacao = data_locacao;
+    public Reserva(long cpf, String placa, Date dataRetirada, Date dataRetorno) {
+        this.dataRetirada = dataRetirada;
+        this.dataRetorno = dataRetorno;
         this.cpf = cpf;
         this.placa = placa;
     }
 
-    public Date getData_locacao() {
-        return data_locacao;
+    public Date getDataRetirada() {
+        return dataRetirada;
+    }
+
+    public Date getDataRetorno() {
+        return dataRetorno;
     }
 
     public long getCpf() {
@@ -32,9 +38,13 @@ public class Reserva {
     public String getPlaca() {
         return placa;
     }
-    
-    public void setData_locacao(Date data_locacao) {
-        this.data_locacao = data_locacao;
+
+    public void setDataRetirada(Date dataRetirada) {
+        this.dataRetirada = dataRetirada;
+    }
+
+    public void setDataRetorno(Date dataRetorno) {
+        this.dataRetorno = dataRetorno;
     }
 
     public void setCpf(long cpf) {
