@@ -21,6 +21,7 @@ br\com\gking\view\buscar_clientes$5.class
 br\com\gking\view\gerenciar_veiculos$10.class
 br\com\gking\view\buscar_clientes$4.class
 br\com\gking\view\tela_inicial.class
+br\com\gking\model\Reserva.class
 br\com\gking\controller\database.class
 br\com\gking\view\gerenciar_clientes$6.class
 br\com\gking\view\buscar_clientes$2.class
