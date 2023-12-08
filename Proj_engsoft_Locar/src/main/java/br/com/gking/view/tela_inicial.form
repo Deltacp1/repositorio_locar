@@ -23,10 +23,14 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
           <Group type="102" alignment="0" attributes="0">
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
+=======
+          <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+>>>>>>> 784c6b56aca7cbc19a1b5af68fca1ca5b769624f
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -108,6 +112,7 @@
               <Color id="Default Cursor"/>
             </Property>
             <Property name="name" type="java.lang.String" value="" noResource="true"/>
+            <Property name="opaque" type="boolean" value="false"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="clientesButtonActionPerformed"/>
