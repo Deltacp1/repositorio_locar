@@ -66,11 +66,18 @@ public class gerenciar_veiculos extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         categoriaText = new javax.swing.JTextField();
         disponibilidadeBotao = new javax.swing.JToggleButton();
+        jPanel2 = new javax.swing.JPanel();
+        voltarBotao = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(255, 119, 37));
+        jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Placa");
 
         placaText.addActionListener(new java.awt.event.ActionListener() {
@@ -79,6 +86,8 @@ public class gerenciar_veiculos extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Marca:");
 
         marcaText.addActionListener(new java.awt.event.ActionListener() {
@@ -87,6 +96,8 @@ public class gerenciar_veiculos extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Modelo:");
 
         modeloText.addActionListener(new java.awt.event.ActionListener() {
@@ -95,6 +106,8 @@ public class gerenciar_veiculos extends javax.swing.JFrame {
             }
         });
 
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Ano:");
 
         anoText.addActionListener(new java.awt.event.ActionListener() {
@@ -103,6 +116,8 @@ public class gerenciar_veiculos extends javax.swing.JFrame {
             }
         });
 
+        editarBotao.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        editarBotao.setForeground(new java.awt.Color(141, 60, 14));
         editarBotao.setText("Editar");
         editarBotao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,6 +125,8 @@ public class gerenciar_veiculos extends javax.swing.JFrame {
             }
         });
 
+        excluirBotao.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        excluirBotao.setForeground(new java.awt.Color(141, 60, 14));
         excluirBotao.setText("Excluir");
         excluirBotao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,6 +134,8 @@ public class gerenciar_veiculos extends javax.swing.JFrame {
             }
         });
 
+        salvarBotao.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        salvarBotao.setForeground(new java.awt.Color(141, 60, 14));
         salvarBotao.setText("Salvar");
         salvarBotao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -124,6 +143,8 @@ public class gerenciar_veiculos extends javax.swing.JFrame {
             }
         });
 
+        cadastrarBotao.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        cadastrarBotao.setForeground(new java.awt.Color(141, 60, 14));
         cadastrarBotao.setText("Cadastrar");
         cadastrarBotao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -137,10 +158,16 @@ public class gerenciar_veiculos extends javax.swing.JFrame {
             }
         });
 
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Cor");
 
+        jLabel6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Disponibilidade");
 
+        jLabel7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Quilometragem");
 
         quilometragemText.addActionListener(new java.awt.event.ActionListener() {
@@ -149,6 +176,8 @@ public class gerenciar_veiculos extends javax.swing.JFrame {
             }
         });
 
+        jLabel8.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Categoria");
 
         categoriaText.addActionListener(new java.awt.event.ActionListener() {
@@ -171,6 +200,59 @@ public class gerenciar_veiculos extends javax.swing.JFrame {
                 disponibilidadeBotaoActionPerformed(evt);
             }
         });
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        voltarBotao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/back.png"))); // NOI18N
+        voltarBotao.setAlignmentY(0.0F);
+        voltarBotao.setBorder(null);
+        voltarBotao.setContentAreaFilled(false);
+        voltarBotao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        voltarBotao.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        voltarBotao.setIconTextGap(0);
+        voltarBotao.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        voltarBotao.setPreferredSize(new java.awt.Dimension(41, 37));
+        voltarBotao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                voltarBotaoActionPerformed(evt);
+            }
+        });
+
+        jLabel9.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 102, 51));
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("Gerenciamento de Veículos");
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/redcardelta.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addComponent(voltarBotao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel9)
+                .addGap(31, 31, 31)
+                .addComponent(jLabel10)
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(voltarBotao, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+                        .addGap(4, 4, 4))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel10))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -220,12 +302,14 @@ public class gerenciar_veiculos extends javax.swing.JFrame {
                                 .addComponent(salvarBotao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(anoText, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cadastrarBotao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(49, Short.MAX_VALUE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(placaText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -388,6 +472,13 @@ public class gerenciar_veiculos extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_disponibilidadeBotaoItemStateChanged
 
+    private void voltarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarBotaoActionPerformed
+        var telaInicialScreen = new tela_inicial();
+
+        telaInicialScreen.show();
+        dispose();
+    }//GEN-LAST:event_voltarBotaoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -488,6 +579,7 @@ public class gerenciar_veiculos extends javax.swing.JFrame {
     private javax.swing.JButton editarBotao;
     private javax.swing.JToggleButton excluirBotao;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -495,12 +587,15 @@ public class gerenciar_veiculos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField marcaText;
     private javax.swing.JTextField modeloText;
     private javax.swing.JTextField placaText;
     private javax.swing.JTextField quilometragemText;
     private javax.swing.JToggleButton salvarBotao;
+    private javax.swing.JButton voltarBotao;
     // End of variables declaration//GEN-END:variables
 
 }
